@@ -1,0 +1,12 @@
+body {
+    background-image:url('../img/texturetastic_gray.png');
+}
+
+.nav {
+    background: #ffffff none;
+}
+
+.wrapper {
+    padding: 25px;
+}
+

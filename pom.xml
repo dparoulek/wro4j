@@ -1,51 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+version="1.0" encoding="utf-8"?>
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>ro.isdc.wro4j</groupId>
 	<artifactId>wro4j-parent</artifactId>
 	<version>1.6.3</version>
 	<packaging>pom</packaging>
-
 	<name>wro4j parent</name>
 	<inceptionYear>2008</inceptionYear>
 	<url>http://code.google.com/p/wro4j/</url>
-
 	<description>
-    The purpose of this project is to reduce the number of requests
-    needed to load a page and the amount of data to transfer to clients,
-    achieving drastic improvement of loading times. The resources can be benefit
-    also from minification and compression.
-  </description>
-
-	<issueManagement>
-		<system>googleCode</system>
-		<url>http://code.google.com/p/wro4j/issues/list</url>
-	</issueManagement>
-
-	<licenses>
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-
-	<scm>
-		<connection>scm:git:git://github.com/alexo/wro4j.git</connection>
-		<developerConnection>scm:git:git://github.com/alexo/wro4j.git</developerConnection>
-		<url>http://github.com/alexo/wro4j.git</url>
-	</scm>
-
-	<mailingLists>
-		<mailingList>
-			<name>Discussion Group</name>
-			<post>wro4j@googlegroups.com</post>
-			<archive>http://groups.google.com/group/wro4j</archive>
-		</mailingList>
-	</mailingLists>
-
+		The purpose of this project is to reduce the number of requests
+		needed to load a page and the amount of data to transfer to clients,
+		achieving drastic improvement of loading times. The resources can be benefit
+		also from minification and compression.
+	</description>
 	<developers>
 		<developer>
 			<id>alex.objelean</id>
@@ -60,26 +29,23 @@
 			<timezone>+2</timezone>
 		</developer>
 	</developers>
-
 	<properties>
 		<wro4j.version>1.5.1-SNAPSHOT</wro4j.version>
 		<commons-io.version>2.4</commons-io.version>
 		<commons-lang.version>3.1</commons-lang.version>
 		<commons-pool.version>1.6</commons-pool.version>
 		<closure.version>r2388</closure.version>
-		<slf4j.version>1.7.2</slf4j.version>
-		<maven.version>3.0.4</maven.version>
+		<slf4j.version>1.7.1</slf4j.version>    
+		<maven.version>3.0.4</maven.version>    
 		<mockito.version>1.9.5</mockito.version>
-		<junit.version>4.10</junit.version>
+		<junit.version>4.10</junit.version>    
 		<rhino.version>1.7R3</rhino.version>
-
+		<spring.version>3.1.1.RELEASE</spring.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
 		<maven.compile.encoding>UTF-8</maven.compile.encoding>
 		<maven.test.compile.encoding>UTF-8</maven.test.compile.encoding>
 	</properties>
-
-
 	<dependencyManagement>
 		<dependencies>
 			<!-- Project Dependencies -->
@@ -92,17 +58,17 @@
 				<groupId>${project.groupId}</groupId>
 				<artifactId>wro4j-extensions</artifactId>
 				<version>${project.version}</version>
-			</dependency>
+			</dependency>    
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>wro4j-runner</artifactId>
 				<version>${project.version}</version>
-			</dependency>
+			</dependency>    
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>wro4j-maven-plugin</artifactId>
 				<version>${project.version}</version>
-			</dependency>
+			</dependency>      
 			<!-- Other Dependencies -->
 			<dependency>
 				<groupId>commons-io</groupId>
@@ -131,6 +97,12 @@
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${slf4j.version}</version>        
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
 				<groupId>org.apache.maven</groupId>
 				<artifactId>maven-plugin-api</artifactId>
 				<version>${maven.version}</version>
@@ -139,7 +111,7 @@
 				<groupId>org.apache.maven</groupId>
 				<artifactId>maven-artifact</artifactId>
 				<version>${maven.version}</version>
-			</dependency>
+			</dependency>      
 			<dependency>
 				<groupId>org.apache.maven</groupId>
 				<artifactId>maven-core</artifactId>
@@ -171,14 +143,14 @@
 				<artifactId>servlet-api</artifactId>
 				<version>2.3</version>
 				<scope>provided</scope>
-			</dependency>
+			</dependency>      
 			<dependency>
 				<groupId>javax.servlet.jsp</groupId>
 				<artifactId>jsp-api</artifactId>
 				<version>2.0</version>
 				<scope>provided</scope>
 			</dependency>
-			<!-- Third Party Tools -->
+			<!-- Third Party Tools -->      
 			<dependency>
 				<groupId>org.mozilla</groupId>
 				<artifactId>rhino</artifactId>
@@ -188,7 +160,12 @@
 				<groupId>com.google.javascript</groupId>
 				<artifactId>closure-compiler</artifactId>
 				<version>${closure.version}</version>
-			</dependency>
+			</dependency>	 
+			<dependency>
+				<groupId>com.github.lltyk</groupId>
+				<artifactId>dojo-shrinksafe</artifactId>
+				<version>1.7.2</version>
+			</dependency>      
 			<dependency>
 				<groupId>me.n4u.sass</groupId>
 				<artifactId>sass-gems</artifactId>
@@ -197,54 +174,7 @@
 			<dependency>
 				<groupId>com.github.sommeri</groupId>
 				<artifactId>less4j</artifactId>
-				<version>0.0.14</version>
-				<exclusions>
-					<exclusion>
-						<groupId>com.beust</groupId>
-						<artifactId>jcommander</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>com.google.code.gson</groupId>
-				<artifactId>gson</artifactId>
-				<version>1.6</version>
-			</dependency>
-			<dependency>
-				<groupId>com.github.lltyk</groupId>
-				<artifactId>dojo-shrinksafe</artifactId>
-				<version>1.7.2</version>
-			</dependency>
-			<dependency>
-				<groupId>org.jruby</groupId>
-				<artifactId>jruby-complete</artifactId>
-				<version>1.6.8</version>
-			</dependency>
-			<dependency>
-				<groupId>nz.co.edmi</groupId>
-				<artifactId>bourbon-gem-jar</artifactId>
-				<version>2.1.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.ant</groupId>
-				<artifactId>ant</artifactId>
-				<version>1.8.2</version>
-			</dependency>
-			<dependency>
-				<groupId>org.hamcrest</groupId>
-				<artifactId>hamcrest-core</artifactId>
-				<version>1.1</version>
-			</dependency>
-			<dependency>
-				<groupId>org.codehaus.gmaven.runtime</groupId>
-				<artifactId>gmaven-runtime-1.7</artifactId>
-				<version>1.3</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.sonatype.gossip</groupId>
-						<artifactId>gossip</artifactId>
-					</exclusion>
-				</exclusions>
+				<version>0.0.9</version>
 			</dependency>
 			<!-- Unit tests -->
 			<dependency>
@@ -259,7 +189,22 @@
 				<version>${mockito.version}</version>
 				<scope>test</scope>
 			</dependency>
-		</dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+		</dependencies>        
 	</dependencyManagement>
 	<dependencies>
 		<dependency>
@@ -278,9 +223,8 @@
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
-		</dependency>
+		</dependency>    
 	</dependencies>
-
 	<build>
 		<resources>
 			<resource>
@@ -298,7 +242,6 @@
 				</excludes>
 			</resource>
 		</resources>
-
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -509,5 +452,4 @@
 		</profile>
 	</profiles>
 	<!-- Repository for third party libraries <repositories> <repository> <id>Sonatype</id> 
-		<url>http://oss.sonatype.org/content/groups/public</url> </repository> </repositories> -->
-</project>
+			 <url>http://oss.sonatype.org/content/groups/public</url> </repository> </repositories> -->

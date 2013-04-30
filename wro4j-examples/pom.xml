@@ -6,7 +6,7 @@
   <parent>
     <groupId>ro.isdc.wro4j</groupId>
     <artifactId>wro4j-parent</artifactId>
-    <version>1.6.2.vivo_1</version>
+    <version>1.6.2.vivo_2</version>
   </parent>
 
   <artifactId>wro4j-examples</artifactId>
@@ -16,6 +16,6 @@
   <modules>
     <module>wro4j-demo</module>
     <module>wro4j-standalone</module>
-    <module>wro4j-spring</module>
+    <module>wro4j-osgi-example</module>
   </modules>
 </project>
