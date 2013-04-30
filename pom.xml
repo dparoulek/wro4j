@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -12,11 +13,11 @@
 	<url>http://code.google.com/p/wro4j/</url>
 
 	<description>
-     The purpose of this project is to reduce the number of requests 
-     needed to load a page and the amount of data to transfer to clients, 
-     achieving drastic improvement of loading times. The resources can be benefit 
-     also from minification and compression.
-    </description>
+    The purpose of this project is to reduce the number of requests
+    needed to load a page and the amount of data to transfer to clients,
+    achieving drastic improvement of loading times. The resources can be benefit
+    also from minification and compression.
+  </description>
 
 	<issueManagement>
 		<system>googleCode</system>
@@ -187,7 +188,7 @@
 				<groupId>com.google.javascript</groupId>
 				<artifactId>closure-compiler</artifactId>
 				<version>${closure.version}</version>
-			</dependency>			
+			</dependency>
 			<dependency>
 				<groupId>me.n4u.sass</groupId>
 				<artifactId>sass-gems</artifactId>
@@ -305,6 +306,12 @@
 					<artifactId>maven-release-plugin</artifactId>
 					<version>2.2.1</version>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-bundle-plugin</artifactId>
+					<version>2.3.7</version>
+					<extensions>true</extensions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -398,6 +405,7 @@
 				<module>wro4j-extensions</module>
 				<module>wro4j-maven-plugin</module>
 				<module>wro4j-runner</module>
+				<module>wro4j-osgi</module>
 			</modules>
 		</profile>
 		<profile>
@@ -411,6 +419,7 @@
 				<module>wro4j-maven-plugin</module>
 				<module>wro4j-runner</module>
 				<module>wro4j-examples</module>
+				<module>wro4j-osgi</module>
 			</modules>
 		</profile>
 		<profile>
@@ -422,6 +431,7 @@
 				<module>wro4j-core</module>
 				<module>wro4j-extensions</module>
 				<module>wro4j-maven-plugin</module>
+				<module>wro4j-osgi</module>
 			</modules>
 		</profile>
 		<profile>
@@ -438,8 +448,8 @@
 				<module>wro4j-core</module>
 				<module>wro4j-extensions</module>
 				<module>wro4j-maven-plugin</module>
+				<module>wro4j-osgi</module>
 			</modules>
-
 			<build>
 				<plugins>
 					<plugin>
@@ -476,6 +486,11 @@
 						<configuration>
 							<updateReleaseInfo>true</updateReleaseInfo>
 						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.felix</groupId>
+						<artifactId>maven-bundle-plugin</artifactId>
+						<version>2.3.7</version>
 					</plugin>
 				</plugins>
 			</build>
